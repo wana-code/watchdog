@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WatcherV2.App" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAECAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.MainWindowViewModel" Collapsed="true">
+    <Position X="11.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQIQAAEAEAgAAABABAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.SettingBarViewModel" Collapsed="true">
+    <Position X="14.25" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAIAAAAAQAAAAAAAABAAA=</HashCode>
+      <FileName>ViewModels\SettingBarViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageShortcutViewModel" Collapsed="true">
+    <Position X="11.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAKQAEAAAAAAAEAAIAFIAAAAAAAAAAABAABIAA=</HashCode>
+      <FileName>ViewModels\PageShortcutViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+      <Field Name="_commonUtilService" />
+      <Field Name="_logService" />
+      <Field Name="_eventAggregator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageResourceViewModel" Collapsed="true">
+    <Position X="9" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAQQABACQAEQAITECgABoIAPoBCAAAAQQgAgACEBIAA=</HashCode>
+      <FileName>ViewModels\PageResourceViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_resourceModel" />
+      <Field Name="_resourceCheckService" />
+      <Field Name="_localDBService" />
+      <Field Name="_commonUtilService" />
+      <Field Name="_eventAggregator" />
+      <Field Name="_logService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageSetupGeneralViewModel" Collapsed="true">
+    <Position X="23.75" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAQAgAACUAEAEAAAAgAAAIIFIAAgAAAAAAAoAAABIAA=</HashCode>
+      <FileName>ViewModels\PageSetupGeneralViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+      <Field Name="_commonUtilService" />
+      <Field Name="_eventAggregator" />
+      <Field Name="_logService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageSetupShortcutViewModel" Collapsed="true">
+    <Position X="26.5" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAACAAEAAAAAAAAAAAAFIAAAAAAAAAAAAAABIAA=</HashCode>
+      <FileName>ViewModels\PageSetupShortcutViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+      <Field Name="_commonUtilService" />
+      <Field Name="_eventAggregator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.SetupWindowViewModel" Collapsed="true">
+    <Position X="25.25" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQIUAAEBEAEIAABACIAAAAAAAAAAAQAgJAAI=</HashCode>
+      <FileName>ViewModels\SetupWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WatcherV2.Data.GeneralDB" Collapsed="true">
+    <Position X="18" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAEAAAAAAAAAAAgAgACAAABgAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Data\GeneralDB.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.Data.ShortcutDB" Collapsed="true">
+    <Position X="20.25" Y="14.5" Width="1.5" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.047" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAEgAAAAAAAAAAgAAAAAAAFgAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Data\ShortcutDB.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.Models.GeneralModel" Collapsed="true">
+    <Position X="18" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ghACEABACAIQAIBAAQDAAACEAAEgAEARABAAAgAAABA=</HashCode>
+      <FileName>Models\GeneralModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.Models.ShortcutModel" Collapsed="true">
+    <Position X="20.25" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAABAAAACAAAAAAABAEAAAAAAAAA=</HashCode>
+      <FileName>Models\ShortcutModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.Models.ResourceModel" Collapsed="true">
+    <Position X="15.25" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAEAAAAABAAAAAEAAIAAAIAAAAAAAIJAAgAAAAAA=</HashCode>
+      <FileName>Models\ResourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" Collapsed="true">
+    <Position X="19" Y="13" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAgAAAAAAAAAAEAAAAAAgAAAAAABIA=</HashCode>
+      <FileName>Services\DB\ILocalDBService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WatcherV2.Services.ICommonUtilService" Collapsed="true">
+    <Position X="19" Y="9" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAgAAAAAAAIAAAAgAAAAAACQAAAQA=</HashCode>
+      <FileName>Services\ICommonUtilService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Prism.Events.IEventAggregator" Collapsed="true">
+    <Position X="19" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="WatcherV2.Services.ILogService" Collapsed="true">
+    <Position X="19" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\LogService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WatcherV2.Services.IResourceCheckService" Collapsed="true">
+    <Position X="19" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAACAAAABAAAA=</HashCode>
+      <FileName>Services\IResourceCheckService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>

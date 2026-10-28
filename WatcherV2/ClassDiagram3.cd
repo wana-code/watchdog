@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WatcherV2.App" Collapsed="true">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAECAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.MainWindowViewModel" Collapsed="true">
+    <Position X="11.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQIQAAEAEAgAAABABAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.SettingBarViewModel" Collapsed="true">
+    <Position X="14.25" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAIAAAAAQAAAAAAAABAAA=</HashCode>
+      <FileName>ViewModels\SettingBarViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageShortcutViewModel" Collapsed="true">
+    <Position X="11.5" Y="6.75" Width="2" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.5" Y="7.441" />
+        <Point X="12.5" Y="8.688" />
+        <Point X="19" Y="8.688" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAKQAEAAAAAAAEAAIAFIAAAAAAAAAAABAABIAA=</HashCode>
+      <FileName>ViewModels\PageShortcutViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageResourceViewModel" Collapsed="true">
+    <Position X="9" Y="6.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="7.441" />
+        <Point X="10" Y="8.375" />
+        <Point X="12.417" Y="8.375" Type="JumpStart" />
+        <Point X="12.583" Y="8.375" Type="JumpEnd" />
+        <Point X="19" Y="8.375" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAQQABACQAEQAITECgABoIAPoBCAAAAQQgAgACEBIAA=</HashCode>
+      <FileName>ViewModels\PageResourceViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageSetupGeneralViewModel" Collapsed="true">
+    <Position X="23.75" Y="6.75" Width="2.25" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="23.75" Y="7.096" />
+        <Point X="23.375" Y="7.096" />
+        <Point X="23.375" Y="8.375" />
+        <Point X="20.75" Y="8.375" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAQAgAACUAEAEAAAAgAAAIIFIAAgAAAAAAAoAAABIAA=</HashCode>
+      <FileName>ViewModels\PageSetupGeneralViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageSetupShortcutViewModel" Collapsed="true">
+    <Position X="26.5" Y="6.75" Width="2.25" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27.625" Y="7.441" />
+        <Point X="27.625" Y="8.688" />
+        <Point X="20.75" Y="8.688" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAACAAEAAAAAAAAAAAAFIAAAAAAAAAAAAAABIAA=</HashCode>
+      <FileName>ViewModels\PageSetupShortcutViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.SetupWindowViewModel" Collapsed="true">
+    <Position X="25.25" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQIUAAEBEAEIAABACIAAAAAAAAAAAQAgJAAI=</HashCode>
+      <FileName>ViewModels\SetupWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WatcherV2.Data.GeneralDB" Collapsed="true">
+    <Position X="18" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAEAAAAAAAAAAAgAgACAAABgAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Data\GeneralDB.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.Data.ShortcutDB" Collapsed="true">
+    <Position X="20.25" Y="9.75" Width="1.5" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.047" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAEgAAAAAAAAAAgAAAAAAAFgAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Data\ShortcutDB.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.Models.GeneralModel" Collapsed="true">
+    <Position X="18" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ghACEABACAIQAIBAAQDAAACEAAEgAEARABAAAgAAABA=</HashCode>
+      <FileName>Models\GeneralModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.Models.ShortcutModel" Collapsed="true">
+    <Position X="20.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAABAAAACAAAAAAABAEAAAAAAAAA=</HashCode>
+      <FileName>Models\ShortcutModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" Collapsed="true">
+    <Position X="19" Y="8.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAgAAAAAAAAAAEAAAAAAgAAAAAABIA=</HashCode>
+      <FileName>Services\DB\ILocalDBService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>

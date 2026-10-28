@@ -1,0 +1,350 @@
+﻿<UserControl x:Class="WatcherV2.Views.SettingBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d"
+             d:DesignHeight="72"
+             d:DesignWidth="720"
+             Background="Transparent">
+
+    <UserControl.Resources>
+
+        <!-- =====================================================
+             COLORS
+             ===================================================== -->
+
+        <SolidColorBrush x:Key="PrimaryTextBrush"
+                         Color="#F5F8F7" />
+
+        <SolidColorBrush x:Key="SecondaryTextBrush"
+                         Color="#C3CED1" />
+
+        <SolidColorBrush x:Key="MutedTextBrush"
+                         Color="#95A6AA" />
+
+        <!-- 설정 -->
+        <SolidColorBrush x:Key="AccentBrush"
+                         Color="#42D7C2" />
+
+        <SolidColorBrush x:Key="AccentDarkBrush"
+                         Color="#12332F" />
+
+        <SolidColorBrush x:Key="AccentBorderBrush"
+                         Color="#32766D" />
+
+        <!-- 재시작 -->
+        <SolidColorBrush x:Key="OrangeBrush"
+                         Color="#FF9F1C" />
+
+        <SolidColorBrush x:Key="OrangeDarkBrush"
+                         Color="#332315" />
+
+        <SolidColorBrush x:Key="OrangeBorderBrush"
+                         Color="#80521E" />
+
+        <!-- =====================================================
+             DEFAULT TEXT
+             ===================================================== -->
+
+        <Style TargetType="{x:Type TextBlock}">
+
+            <Setter Property="FontFamily"
+                    Value="Segoe UI" />
+
+            <Setter Property="Foreground"
+                    Value="{StaticResource PrimaryTextBrush}" />
+
+            <Setter Property="TextOptions.TextFormattingMode"
+                    Value="Display" />
+
+            <Setter Property="TextOptions.TextRenderingMode"
+                    Value="ClearType" />
+
+        </Style>
+
+        <!-- =====================================================
+             SETTING BUTTON
+             ===================================================== -->
+
+        <Style x:Key="SettingButtonStyle"
+               TargetType="{x:Type Button}">
+
+            <Setter Property="Height"
+                    Value="42" />
+
+            <Setter Property="MinWidth"
+                    Value="118" />
+
+            <Setter Property="Padding"
+                    Value="20,0" />
+
+            <Setter Property="Background"
+                    Value="{StaticResource AccentDarkBrush}" />
+
+            <Setter Property="Foreground"
+                    Value="{StaticResource AccentBrush}" />
+
+            <Setter Property="BorderBrush"
+                    Value="{StaticResource AccentBorderBrush}" />
+
+            <Setter Property="BorderThickness"
+                    Value="1" />
+
+            <Setter Property="FontFamily"
+                    Value="Segoe UI" />
+
+            <Setter Property="FontSize"
+                    Value="15" />
+
+            <Setter Property="FontWeight"
+                    Value="SemiBold" />
+
+            <Setter Property="Cursor"
+                    Value="Hand" />
+
+            <Setter Property="Focusable"
+                    Value="False" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="ButtonBorder"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="8">
+
+                            <ContentPresenter
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Margin="{TemplateBinding Padding}" />
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Background"
+                                        Value="#19413C" />
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="BorderBrush"
+                                        Value="{StaticResource AccentBrush}" />
+
+                                <Setter Property="Foreground"
+                                        Value="#FFFFFF" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed"
+                                     Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Opacity"
+                                        Value="0.75" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled"
+                                     Value="False">
+
+                                <Setter Property="Opacity"
+                                        Value="0.4" />
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+        <!-- =====================================================
+             RESTART BUTTON
+             ===================================================== -->
+
+        <Style x:Key="RestartButtonStyle"
+               TargetType="{x:Type Button}">
+
+            <Setter Property="Height"
+                    Value="42" />
+
+            <Setter Property="MinWidth"
+                    Value="118" />
+
+            <Setter Property="Padding"
+                    Value="20,0" />
+
+            <Setter Property="Background"
+                    Value="{StaticResource OrangeDarkBrush}" />
+
+            <Setter Property="Foreground"
+                    Value="{StaticResource OrangeBrush}" />
+
+            <Setter Property="BorderBrush"
+                    Value="{StaticResource OrangeBorderBrush}" />
+
+            <Setter Property="BorderThickness"
+                    Value="1" />
+
+            <Setter Property="FontFamily"
+                    Value="Segoe UI" />
+
+            <Setter Property="FontSize"
+                    Value="15" />
+
+            <Setter Property="FontWeight"
+                    Value="SemiBold" />
+
+            <Setter Property="Cursor"
+                    Value="Hand" />
+
+            <Setter Property="Focusable"
+                    Value="False" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="ButtonBorder"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="8">
+
+                            <ContentPresenter
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Margin="{TemplateBinding Padding}" />
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Background"
+                                        Value="#4A3019" />
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="BorderBrush"
+                                        Value="{StaticResource OrangeBrush}" />
+
+                                <Setter Property="Foreground"
+                                        Value="#FFFFFF" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed"
+                                     Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Opacity"
+                                        Value="0.75" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled"
+                                     Value="False">
+
+                                <Setter Property="Opacity"
+                                        Value="0.4" />
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid Background="Transparent">
+
+        <Grid.ColumnDefinitions>
+
+            <!-- 설명 -->
+            <ColumnDefinition Width="*" />
+
+            <!-- 버튼 -->
+            <ColumnDefinition Width="Auto" />
+
+        </Grid.ColumnDefinitions>
+
+        <!-- =====================================================
+             LEFT
+             ===================================================== -->
+
+        <StackPanel Grid.Column="0"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center">
+
+            <!-- 포인트 -->
+            <Border Width="5"
+                    Height="28"
+                    Background="{StaticResource OrangeBrush}"
+                    CornerRadius="2"
+                    Margin="0,0,12,0" />
+
+            <StackPanel VerticalAlignment="Center">
+
+                <TextBlock Text="설정 및 시스템 제어"
+                           FontSize="17"
+                           FontWeight="SemiBold"
+                           Foreground="{StaticResource PrimaryTextBrush}" />
+
+                <TextBlock Text="프로그램 설정과 시스템 재시작 기능"
+                           Margin="0,4,0,0"
+                           FontSize="13"
+                           Foreground="{StaticResource SecondaryTextBrush}" />
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <!-- =====================================================
+             RIGHT BUTTONS
+             ===================================================== -->
+
+        <StackPanel Grid.Column="1"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center">
+
+            <!-- 설정 -->
+            <Button
+                Content="설정"
+                Style="{StaticResource SettingButtonStyle}"
+                Command="{Binding BtnCommand}"
+                CommandParameter="Setting" />
+
+            <!-- 재시작 -->
+            <Button
+                Content="재시작"
+                Margin="10,0,0,0"
+                Style="{StaticResource RestartButtonStyle}"
+                Command="{Binding BtnCommand}"
+                CommandParameter="Reboot" />
+
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>

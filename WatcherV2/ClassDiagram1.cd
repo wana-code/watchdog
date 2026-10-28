@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WatcherV2.App">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAECAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.MainWindowViewModel">
+    <Position X="11.75" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQIQAAEAEAgAAABABAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.SettingBarViewModel">
+    <Position X="14.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAIAAAAAQAAAAAAAABAAA=</HashCode>
+      <FileName>ViewModels\SettingBarViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageShortcutViewModel">
+    <Position X="11.5" Y="6.75" Width="2.25" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.773" Y="10.232" />
+        <Point X="12.773" Y="14.938" />
+        <Point X="19" Y="14.938" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_commonUtilService" Type="WatcherV2.Services.ICommonUtilService" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.75" Y="9.474" />
+        <Point X="18.7" Y="9.474" />
+        <Point X="18.7" Y="8.755" />
+        <Point X="19" Y="8.755" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_logService" Type="WatcherV2.Services.ILogService" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.959" Y="10.232" />
+        <Point X="12.959" Y="13.188" />
+        <Point X="19" Y="13.188" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_eventAggregator" Type="Prism.Events.IEventAggregator" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.105" Y="10.232" />
+        <Point X="12.105" Y="10.625" />
+        <Point X="12.69" Y="10.625" Type="JumpStart" />
+        <Point X="12.856" Y="10.625" Type="JumpEnd" />
+        <Point X="12.876" Y="10.625" Type="JumpStart" />
+        <Point X="13.042" Y="10.625" Type="JumpEnd" />
+        <Point X="19" Y="10.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAKQAEAAAAAAAEAAIAFIAAAAAAAAAAABAABIAA=</HashCode>
+      <FileName>ViewModels\PageShortcutViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+      <Field Name="_commonUtilService" />
+      <Field Name="_logService" />
+      <Field Name="_eventAggregator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageResourceViewModel">
+    <Position X="9" Y="6.75" Width="2" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="10.531" Y="14.463" />
+        <Point X="10.531" Y="14.688" />
+        <Point X="12.69" Y="14.688" Type="JumpStart" />
+        <Point X="12.856" Y="14.688" Type="JumpEnd" />
+        <Point X="19" Y="14.688" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_eventAggregator" Type="Prism.Events.IEventAggregator" FixedToPoint="true">
+      <Path>
+        <Point X="11" Y="10.438" />
+        <Point X="12.022" Y="10.438" Type="JumpStart" />
+        <Point X="12.188" Y="10.438" Type="JumpEnd" />
+        <Point X="12.69" Y="10.438" Type="JumpStart" />
+        <Point X="12.856" Y="10.438" Type="JumpEnd" />
+        <Point X="12.876" Y="10.438" Type="JumpStart" />
+        <Point X="13.042" Y="10.438" Type="JumpEnd" />
+        <Point X="19" Y="10.438" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_logService" Type="WatcherV2.Services.ILogService" FixedToPoint="true">
+      <Path>
+        <Point X="11" Y="13.375" />
+        <Point X="12.69" Y="13.375" Type="JumpStart" />
+        <Point X="12.856" Y="13.375" Type="JumpEnd" />
+        <Point X="19" Y="13.375" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAQQABACQAEQAITECgABoIAPoBCAAAAQQgAgACEBIAA=</HashCode>
+      <FileName>ViewModels\PageResourceViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_resourceModel" />
+      <Field Name="_resourceCheckService" />
+      <Field Name="_localDBService" />
+      <Field Name="_commonUtilService" />
+      <Field Name="_eventAggregator" />
+      <Field Name="_logService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageSetupGeneralViewModel">
+    <Position X="23.75" Y="6.75" Width="2.25" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="24.281" Y="11.771" />
+        <Point X="24.281" Y="14.938" />
+        <Point X="20.75" Y="14.938" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_eventAggregator" Type="Prism.Events.IEventAggregator" FixedToPoint="true">
+      <Path>
+        <Point X="23.75" Y="10.625" />
+        <Point X="21.583" Y="10.625" Type="JumpStart" />
+        <Point X="21.417" Y="10.625" Type="JumpEnd" />
+        <Point X="20.5" Y="10.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAQAgAACUAEAEAAAAgAAAIIFIAAgAAAAAAAoAAABIAA=</HashCode>
+      <FileName>ViewModels\PageSetupGeneralViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+      <Field Name="_commonUtilService" />
+      <Field Name="_eventAggregator" />
+      <Field Name="_logService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.PageSetupShortcutViewModel">
+    <Position X="26.5" Y="6.75" Width="2.5" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27.094" Y="9.463" />
+        <Point X="27.094" Y="14.688" />
+        <Point X="24.364" Y="14.688" Type="JumpStart" />
+        <Point X="24.198" Y="14.688" Type="JumpEnd" />
+        <Point X="20.75" Y="14.688" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_eventAggregator" Type="Prism.Events.IEventAggregator" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="28.078" Y="9.463" />
+        <Point X="28.078" Y="12.021" />
+        <Point X="27.177" Y="12.021" Type="JumpStart" />
+        <Point X="27.011" Y="12.021" Type="JumpEnd" />
+        <Point X="25.255" Y="12.021" Type="JumpStart" />
+        <Point X="25.088" Y="12.021" Type="JumpEnd" />
+        <Point X="24.364" Y="12.021" Type="JumpStart" />
+        <Point X="24.198" Y="12.021" Type="JumpEnd" />
+        <Point X="21.5" Y="12.021" />
+        <Point X="21.5" Y="10.438" />
+        <Point X="20.5" Y="10.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAACAAEAAAAAAAAAAAAFIAAAAAAAAAAAAAABIAA=</HashCode>
+      <FileName>ViewModels\PageSetupShortcutViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+      <Field Name="_commonUtilService" />
+      <Field Name="_eventAggregator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.ViewModels.SetupWindowViewModel">
+    <Position X="25.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQIUAAEBEAEIAABACIAAAAAAAAAAAQAgJAAI=</HashCode>
+      <FileName>ViewModels\SetupWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WatcherV2.Data.GeneralDB">
+    <Position X="17.75" Y="17.25" Width="1.5" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.5" Y="17.25" />
+        <Point X="18.5" Y="15.375" />
+        <Point X="19" Y="15.375" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAEAAAAAAAAAAAgAgACAAABgAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Data\GeneralDB.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.Data.ShortcutDB">
+    <Position X="20.5" Y="17.25" Width="1.75" />
+    <AssociationLine Name="_localDBService" Type="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.312" Y="17.25" />
+        <Point X="21.312" Y="15.375" />
+        <Point X="20.75" Y="15.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.06" Y="0.047" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAEgAAAAAAAAAAgAAAAAAAFgAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Data\ShortcutDB.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_localDBService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WatcherV2.Models.GeneralModel">
+    <Position X="17.5" Y="21" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ghACEABACAIQAIBAAQDAAACEAAEgAEARABAAAgAAABA=</HashCode>
+      <FileName>Models\GeneralModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.Models.ShortcutModel">
+    <Position X="20.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAABAAAACAAAAAAABAEAAAAAAAAA=</HashCode>
+      <FileName>Models\ShortcutModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WatcherV2.Models.ResourceModel">
+    <Position X="14.25" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAEAAAAABAAAAAEAAIAAAIAAAAAAAIJAAgAAAAAA=</HashCode>
+      <FileName>Models\ResourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="WatcherV2.Services.DB.ILocalDBService&lt;T&gt;">
+    <Position X="19" Y="14.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAgAAAAAAAAAAEAAAAAAgAAAAAABIA=</HashCode>
+      <FileName>Services\DB\ILocalDBService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WatcherV2.Services.ICommonUtilService">
+    <Position X="19" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAgAAAAAAAIAAAAgAAAAAACQAAAQA=</HashCode>
+      <FileName>Services\ICommonUtilService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Prism.Events.IEventAggregator" Collapsed="true">
+    <Position X="19" Y="10.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="WatcherV2.Services.ILogService" Collapsed="true">
+    <Position X="19" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\LogService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WatcherV2.Services.IResourceCheckService">
+    <Position X="19" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAACAAAABAAAA=</HashCode>
+      <FileName>Services\IResourceCheckService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>

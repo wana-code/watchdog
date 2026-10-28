@@ -1,0 +1,442 @@
+﻿<UserControl x:Name="UserTitleBar"
+             x:Class="WatcherV2.CommonUI.UITitleBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d"
+             d:DesignHeight="52"
+             d:DesignWidth="1280"
+             Height="52"
+             Background="Transparent">
+
+    <UserControl.Resources>
+
+        <!-- 기본 색상 -->
+        <SolidColorBrush x:Key="TitleBarBackgroundBrush"
+                         Color="#0A1519" />
+
+        <SolidColorBrush x:Key="TitleBarBorderBrush"
+                         Color="#1D353B" />
+
+        <SolidColorBrush x:Key="PrimaryTextBrush"
+                         Color="#F1F5F4" />
+
+        <SolidColorBrush x:Key="SecondaryTextBrush"
+                         Color="#91A1A5" />
+
+        <!-- 기본 강조색 -->
+        <SolidColorBrush x:Key="AccentBrush"
+                         Color="#42D7C2" />
+
+        <!-- 주황 강조색 -->
+        <SolidColorBrush x:Key="OrangeAccentBrush"
+                         Color="#FF9F1C" />
+
+        <SolidColorBrush x:Key="OrangeDarkBrush"
+                         Color="#3A2815" />
+
+        <SolidColorBrush x:Key="OrangeBorderBrush"
+                         Color="#80501A" />
+
+        <!-- 버튼 색상 -->
+        <SolidColorBrush x:Key="ButtonHoverBrush"
+                         Color="#14262C" />
+
+        <SolidColorBrush x:Key="ButtonPressedBrush"
+                         Color="#1B353D" />
+
+        <SolidColorBrush x:Key="CloseHoverBrush"
+                         Color="#D94A3D" />
+
+        <!-- 일반 창 버튼 -->
+        <Style x:Key="WindowButtonStyle"
+               TargetType="{x:Type Button}">
+
+            <Setter Property="Width"
+                    Value="46" />
+
+            <Setter Property="Height"
+                    Value="51" />
+
+            <Setter Property="Padding"
+                    Value="0" />
+
+            <Setter Property="Margin"
+                    Value="0" />
+
+            <Setter Property="BorderThickness"
+                    Value="0" />
+
+            <Setter Property="Background"
+                    Value="Transparent" />
+
+            <Setter Property="Foreground"
+                    Value="{StaticResource SecondaryTextBrush}" />
+
+            <Setter Property="Cursor"
+                    Value="Hand" />
+
+            <Setter Property="Focusable"
+                    Value="False" />
+
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center" />
+
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="ButtonBorder"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Background"
+                                        Value="{StaticResource ButtonHoverBrush}" />
+
+                                <Setter Property="Foreground"
+                                        Value="{StaticResource OrangeAccentBrush}" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed"
+                                     Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Background"
+                                        Value="{StaticResource ButtonPressedBrush}" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled"
+                                     Value="False">
+
+                                <Setter Property="Opacity"
+                                        Value="0.4" />
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+        <!-- 닫기 버튼 -->
+        <Style x:Key="CloseWindowButtonStyle"
+               TargetType="{x:Type Button}"
+               BasedOn="{StaticResource WindowButtonStyle}">
+
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="ButtonBorder"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Background"
+                                        Value="{StaticResource CloseHoverBrush}" />
+
+                                <Setter Property="Foreground"
+                                        Value="White" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed"
+                                     Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                                        Property="Opacity"
+                                        Value="0.75" />
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+    </UserControl.Resources>
+
+    <Border Background="{StaticResource TitleBarBackgroundBrush}"
+            BorderBrush="{StaticResource TitleBarBorderBrush}"
+            BorderThickness="0,0,0,1">
+
+        <Grid x:Name="UITitleBar1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- 전체 타이틀바 드래그 -->
+            <i:Interaction.Triggers>
+
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+
+                    <i:InvokeCommandAction
+                        Command="{Binding BtnCommand,
+                                          ElementName=UserTitleBar}"
+                        CommandParameter="Drag" />
+
+                </i:EventTrigger>
+
+            </i:Interaction.Triggers>
+
+            <!-- 왼쪽 로고 및 브랜드 -->
+            <Grid Grid.Column="0"
+                  Margin="18,0,0,0"
+                  VerticalAlignment="Center">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- 로고 -->
+                <Border Grid.Column="0"
+                        Width="32"
+                        Height="32"
+                        Background="{StaticResource OrangeDarkBrush}"
+                        BorderBrush="{StaticResource OrangeBorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="8">
+
+                    <Grid>
+
+                        <!-- 외곽 렌즈 -->
+                        <Ellipse Width="16"
+                                 Height="16"
+                                 Stroke="{StaticResource OrangeAccentBrush}"
+                                 StrokeThickness="2" />
+
+                        <!-- 중심 -->
+                        <Ellipse Width="5"
+                                 Height="5"
+                                 Fill="{StaticResource AccentBrush}" />
+
+                        <!-- 상태 표시 -->
+                        <Ellipse Width="4"
+                                 Height="4"
+                                 Fill="{StaticResource OrangeAccentBrush}"
+                                 HorizontalAlignment="Right"
+                                 VerticalAlignment="Top"
+                                 Margin="0,6,6,0" />
+
+                    </Grid>
+
+                </Border>
+
+                <!-- 브랜드 텍스트 -->
+                <StackPanel Grid.Column="1"
+                            Margin="11,0,0,0"
+                            VerticalAlignment="Center">
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock Text="EMB"
+                                   Foreground="{StaticResource PrimaryTextBrush}"
+                                   FontFamily="Segoe UI"
+                                   FontSize="13"
+                                   FontWeight="Bold" />
+
+                        <TextBlock Text=" LABS"
+                                   Foreground="{StaticResource OrangeAccentBrush}"
+                                   FontFamily="Segoe UI"
+                                   FontSize="13"
+                                   FontWeight="Bold" />
+
+                    </StackPanel>
+
+                    <TextBlock Text="WATCHDOG"
+                               Margin="0,-1,0,0"
+                               Foreground="{StaticResource AccentBrush}"
+                               FontFamily="Segoe UI"
+                               FontSize="9"
+                               FontWeight="SemiBold" />
+
+                </StackPanel>
+
+            </Grid>
+
+            <!-- 가운데 제목 -->
+            <Grid Grid.Column="1"
+                  Margin="28,0,10,0">
+
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+
+                    <!-- 구분선 -->
+                    <Border Width="1"
+                            Height="18"
+                            Background="#294047"
+                            Margin="0,0,16,0" />
+
+                    <TextBlock
+                        Text="{Binding UITitleText,
+                                       ElementName=UserTitleBar}"
+                        Foreground="{StaticResource SecondaryTextBrush}"
+                        FontFamily="Segoe UI"
+                        FontSize="13"
+                        FontWeight="Normal"
+                        VerticalAlignment="Center"
+                        TextTrimming="CharacterEllipsis" />
+
+                    <!-- 활성 상태 표시 -->
+                    <Border Margin="14,0,0,0"
+                            Padding="8,3"
+                            Background="#332616"
+                            BorderBrush="#684719"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            VerticalAlignment="Center">
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <Ellipse Width="5"
+                                     Height="5"
+                                     Fill="{StaticResource OrangeAccentBrush}"
+                                     Margin="0,0,6,0"
+                                     VerticalAlignment="Center" />
+
+                            <TextBlock Text="ACTIVE"
+                                       Foreground="{StaticResource OrangeAccentBrush}"
+                                       FontSize="9"
+                                       FontWeight="SemiBold"
+                                       VerticalAlignment="Center" />
+
+                        </StackPanel>
+
+                    </Border>
+
+                </StackPanel>
+
+            </Grid>
+
+            <!-- 창 제어 버튼 -->
+            <StackPanel Grid.Column="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Stretch">
+
+                <!-- 최소화 -->
+                <Button Command="{Binding BtnCommand,
+                                          ElementName=UserTitleBar}"
+                        CommandParameter="Min"
+                        Style="{StaticResource WindowButtonStyle}"
+                        ToolTip="최소화">
+
+                    <Path Width="12"
+                          Height="2"
+                          Stretch="Fill"
+                          Stroke="{Binding Foreground,
+                                           RelativeSource={RelativeSource AncestorType=Button}}"
+                          StrokeThickness="1.5"
+                          Data="M 0,0 L 12,0" />
+
+                </Button>
+
+                <!-- 최대화 -->
+                <Button Command="{Binding BtnCommand,
+                                          ElementName=UserTitleBar}"
+                        CommandParameter="Max"
+                        Style="{StaticResource WindowButtonStyle}"
+                        ToolTip="최대화">
+
+                    <Rectangle Width="11"
+                               Height="9"
+                               Fill="Transparent"
+                               Stroke="{Binding Foreground,
+                                                RelativeSource={RelativeSource AncestorType=Button}}"
+                               StrokeThickness="1.2" />
+
+                </Button>
+
+                <!-- 닫기 -->
+                <Button Command="{Binding BtnCommand,
+                                          ElementName=UserTitleBar}"
+                        CommandParameter="Close"
+                        Style="{StaticResource CloseWindowButtonStyle}"
+                        ToolTip="닫기">
+
+                    <Path Width="11"
+                          Height="11"
+                          Stretch="Fill"
+                          Stroke="{Binding Foreground,
+                                           RelativeSource={RelativeSource AncestorType=Button}}"
+                          StrokeThickness="1.3"
+                          StrokeStartLineCap="Round"
+                          StrokeEndLineCap="Round"
+                          Data="M 0,0 L 10,10 M 10,0 L 0,10" />
+
+                </Button>
+
+            </StackPanel>
+
+            <!-- 하단 주황 포인트 라인 -->
+            <Border Grid.ColumnSpan="3"
+                    Height="2"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                                         EndPoint="1,0">
+
+                        <GradientStop Color="#FF9F1C"
+                                      Offset="0" />
+
+                        <GradientStop Color="#42D7C2"
+                                      Offset="0.75" />
+
+                        <GradientStop Color="Transparent"
+                                      Offset="1" />
+
+                    </LinearGradientBrush>
+                </Border.Background>
+
+            </Border>
+
+        </Grid>
+
+    </Border>
+
+</UserControl>
