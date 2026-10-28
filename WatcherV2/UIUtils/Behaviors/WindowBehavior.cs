@@ -1,5 +1,8 @@
 ﻿using Microsoft.Xaml.Behaviors;
+using System;
 using System.Windows;
+using System.Windows.Interop;
+using System.Windows.Media;
 using WatcherV2.Core;
 
 namespace WatcherV2.UIUtils.Behaviors
@@ -91,34 +94,23 @@ namespace WatcherV2.UIUtils.Behaviors
 
         private void ProcessMainWindow_Loaded()
         {
-            // 화면의 해상도를 가져옵니다.
-            double screenWidth = SystemParameters.PrimaryScreenWidth;
-            double windowHeight = SystemParameters.PrimaryScreenHeight - 50;
+            var win = AssociatedObject;
+            var wa = SystemParameters.WorkArea;   // 작업표시줄 제외, DIP 단위 (-50 하드코딩 대체)
 
-            // 윈도우의 너비를 설정합니다. (필요에 따라 조정)
             double widthRatio = 0.3;
+            if (MainWidthRatio == DispWithRatio.Disp_20P) widthRatio = 0.2;
+            else if (MainWidthRatio == DispWithRatio.Disp_40P) widthRatio = 0.4;
 
-            if (MainWidthRatio == DispWithRatio.Disp_20P)
-            {
-                widthRatio = 0.2;
-            }
-            else if (MainWidthRatio == DispWithRatio.Disp_30P)
-            {
-                widthRatio = 0.3;
-            }
-            else if (MainWidthRatio == DispWithRatio.Disp_40P)
-            {
-                widthRatio = 0.4;
-            }
+            win.WindowState = WindowState.Normal;
+            win.SizeToContent = SizeToContent.Manual;
 
-            //전체 화면 대비 20% 사용            
-            double windowWidth = screenWidth * widthRatio; // 예시 너비
+            double w = Math.Max(wa.Width * widthRatio, win.MinWidth);  // MinWidth보다 작게는 못 줄임
+            win.Width = w;
+            win.Height = wa.Height;
+            win.Top = wa.Top;
 
-            // 윈도우의 위치를 화면 오른쪽 끝으로 설정합니다.
-            AssociatedObject.Left = screenWidth - windowWidth;
-            AssociatedObject.Top = 0; // 화면 하단에 위치시킬 경우
-            AssociatedObject.Height = windowHeight;
-            AssociatedObject.Width = windowWidth;
+            win.UpdateLayout();
+            win.Left = wa.Right - win.ActualWidth;   // 실제 너비 기준으로 오른쪽 끝에 붙임
         }
     }
 }
